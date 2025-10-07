@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Basics</h1>
+    </header>
+
+    <main>
+        <h2>Variables</h2>
+
+        <h2>Decision Logic - if/else</h2>
+
+        <h2>Functions</h2>
+
+        <h2>Loops</h2>
+    </main>
+    <!-- when you want to use JavaScript code, put it between script tags -->
+    <script>
+        // sinlge line comment
+        /* multi line comment */
+
+        // let's crete our first variable - a variable is a piece of info that the grogram stores
+        // camelCase
+        // var is less concerned with scope
+        var firstName = "Ian"; // this is a string variable
+
+        // sname_case
+        // let is very concerned with scope
+        let first_name = "Ian"; // this is a string variable
+
+        // JavaScript is a dynamically-type language
+        // JavaScript tries to guess what is the data type of your variables
+
+        let age = 20; // JavaScript will assume this is an integer (int) - a whole number
+
+        let pi = 3.14; // JavaScript will assume this is a float (decimal points)
+
+        let valid_input = false; // JavaScript will assume that this is a boolean - true/false
+
+        let last_name = ""; // wewill set up the varible now, and get the value later
+
+        // this is a valid way to set up a varible in JavaScript
+        // in JavaScript, please do not set up your variables without let or var
+        middname_name = "Alexander";
+
+        /* ****** if/else - decision logic ****** */
+
+        // if statements test out the condition and are either true or false; if it's true the code inside the {} will run
+        // == is equality / are the values on the both sides the same
+        // = is assignment - the value on the left side of the = will become the value on the right side
+        // === is where JavaScript wil lcompre both the value and th edata type
+        if(age == 25)
+        {
+            // if the age is 5 do something
+            console.log("age is 5");
+        }
+        else if(age >= 18)
+        {
+            console.log("age is 18 - you're an adult")
+        }
+        else
+        {
+            console.log("age not 5");
+        }
+    </script>
+</body>
+</html>
