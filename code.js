@@ -27,10 +27,10 @@ function playCraps()
             let result = "";
             
             // see if the user last - if they rolled sum of 7 or 11
-            if(sum == 7 || sum == 11)
+            if(sum == 7 && sum == 11)
                 {
                 console.log("you lost");
-                result = "You LOST!!!!"
+                result = "You LOST!!!!";
             }
             // check if we rolled an even number
             // modulus - do a division problem and we get te hremainder as the result
@@ -46,7 +46,7 @@ function playCraps()
                 // the catch-all else statement if neither of the above to true, this else statement will run
                 else
                 {
-                    console.log("you tied (pushed)")
+                    console.log("you tied (pushed)");
                     result = "You tried (you pushed)";
                 }
                 
