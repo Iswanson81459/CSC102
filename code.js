@@ -27,10 +27,10 @@ function playCraps()
             let result = "";
             
             // see if the user last - if they rolled sum of 7 or 11
-            if(sum == 7 || sum == 11)
+            if(sum == 7 && sum == 11)
                 {
                 console.log("you lost");
-                result = "You LOST!!!!"
+                result = "You LOST!!!!";
             }
             // check if we rolled an even number
             // modulus - do a division problem and we get te hremainder as the result
@@ -46,7 +46,7 @@ function playCraps()
                 // the catch-all else statement if neither of the above to true, this else statement will run
                 else
                 {
-                    console.log("you tied (pushed)")
+                    console.log("you tied (pushed)");
                     result = "You tried (you pushed)";
                 }
                 
@@ -63,4 +63,50 @@ function playCraps()
             
             // round the number and return the value
             return Math.ceil(die);
+        }
+
+        function validateForm()
+        {
+            let FullName = "";
+           
+            // get the value the user entered in for their first name
+            // we will remove any spaces at the eginning or end with trim()
+            let firstName = document.getElementById("txtFirstName").value.trim();
+
+            // get the user's last name
+            let lastName = document.getElementById("txtLastName").value.trim();
+
+            let zipCode = document.getElementById("txtZipCode").value.trim();
+
+
+            console.log("firstName= " + firstName);
+            console.log("lastName= " + lastName);
+            console.log("zipCode= " + zipCode);
+
+            // validation - we need to make sure that the first name + " " + last name is 20char or less
+            // variable to store the message that we wil display to the user
+            let message = "";
+
+            // concatenate (add) first name + " " + last name
+            fullName = document.getElementById("txtFirstName").value.trim() + " " + document.getElementById("txtLastName").value.trim()
+
+            console.log("fullName= " + fullName);
+
+            // verify if the # of char in the fullName var
+            if(fullName.length > 20 || fullName.length == 1 )
+            {   // an invalide name has been entered
+                message = "Invalid name, please try again."
+                console.log("invalid name");
+            }
+            else if (zipCode.length != 5)
+            {
+                message = "Invalid zip code, please try again";
+                console.log("invalid zip");
+            }
+            else
+            {
+                message = "Welcome, " + firstName + ".  The secret word is validation"
+            }
+
+            document.getElementById("divMessage").textContent = message;
         }
