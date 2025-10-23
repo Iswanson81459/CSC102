@@ -12,7 +12,9 @@
     <title>CSC102 - Index</title>
 
     <link rel="stylesheet" href="styles.css">
+    <script src="code.js"></script>
 </head>
+
 <!-- anything we want our user to see should go in the body section -->
 <body>
     <!-- this is typically info at the top of the page -->
@@ -30,6 +32,12 @@
 
     <!-- this is a paragraph tag -->
     <p>
+        <button id="btnStart" onclick="startMove();">Start Moving Image</button> 
+
+        <!-- the stop button should not be clickable when the page loads - 
+         disabled="true" means the button is not clickable -->
+        <button id="btnStop" onclick="stopMove();" disabled="true">Stop Moving Image</button>
+
         <img src="how insert usb drive meme.jpg" width="500" id="memeImage">
     </p>
 

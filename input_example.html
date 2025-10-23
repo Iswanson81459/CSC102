@@ -6,6 +6,7 @@
         <title>Input Example</title>
 
         <link rel="stylesheet" href="styles.css">
+        <script src="code.js"></script>
     </head>
 
     <body>
@@ -39,57 +40,8 @@
                 <br>
 
                 <button onclick="validateForm();">Save Inputs</button>
-            </form>
+            </form>       
 
-            <script>
-                function validateForm()
-                {
-                    let FullName = "";
-                   
-                    // get the value the user entered in for their first name
-                    // we will remove any spaces at the eginning or end with trim()
-                    let firstName = document.getElementById("txtFirstName").value.trim();
-
-                    // get the user's last name
-                    let lastName = document.getElementById("txtLastName").value.trim();
-
-                    let zipCode = document.getElementById("txtZipCode").value.trim();
-
-
-                    console.log("firstName= " + firstName);
-                    console.log("lastName= " + lastName);
-                    console.log("zipCode= " + zipCode);
-
-                    // validation - we need to make sure that the first name + " " + last name is 20char or less
-                    // variable to store the message that we wil display to the user
-                    let message = "";
-
-                    // concatenate (add) first name + " " + last name
-                    fullName = document.getElementById("txtFirstName").value.trim() + " " + document.getElementById("txtLastName").value.trim()
-
-                    console.log("fullName= " + fullName);
-
-                    // verify if the # of char in the fullName var
-                    if(fullName.length > 20 || fullName.length == 1 )
-                    {   // an invalide name has been entered
-                        message = "Invalid name, please try again."
-                        console.log("invalid name");
-                    }
-                    else if (zipCode.length != 5)
-                    {
-                        message = "Invalid zip code, please try again";
-                        console.log("invalid zip");
-                    }
-                    else
-                    {
-                        message = "Welcome, " + firstName + ".  The secret word is validation"
-                    }
-
-                    document.getElementById("divMessage").textContent = message;
-                }
-            </script>
-
-            <script scr="code.js"> </script>
         </main>
         
     </body>
