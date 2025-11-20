@@ -172,25 +172,60 @@ function playCraps()
     }
 
 function isPalindrome(wordToTest)
-    {
-        // remove any spaces inside of the word(s)
-        let cleanedWord = wordToTest.replace(/\s/g, "");
+{
+    // remove any spaces inside of the word(s)
+    let cleanedWord = wordToTest.replace(/\s/g, "");
 
-        cleanedWord = cleanedWord.toLowerCase();
+    cleanedWord = cleanedWord.toLowerCase();
 
-        // console.log("cleanedWord= " + cleanedWord);
+    // console.log("cleanedWord= " + cleanedWord);
 
-        // convert the cleaned string to an array
-        let arrCleaned = cleanedWord.split("");
+    // convert the cleaned string to an array
+    let arrCleaned = cleanedWord.split("");
 
-        //reverse the array contant
-        arrCleaned = arrCleaned.reverse("");
+    //reverse the array contant
+    arrCleaned = arrCleaned.reverse("");
 
-        // take our reversed array and convert it back to a string
-        let reversedWord = arrCleaned.join("");
+    // take our reversed array and convert it back to a string
+    let reversedWord = arrCleaned.join("");
 
-        console.log("Test= " + reversedWord);
+    console.log("Test= " + reversedWord);
 
-        // compare if the cleaned word and the reversed words are the same
-        return cleanedWord == reversedWord;
-    }
+    // compare if the cleaned word and the reversed words are the same
+    return cleanedWord == reversedWord;
+}
+
+// create a funciton to add  an audio elemnet to the HTML div
+function addAudio()
+{
+    let audioElem = document.createElement("audio");
+    
+    audioElem.setAttribute("id", "myAudio");
+
+    // make sure you use your sound file name here so u can use the us-lab-background.mp3 for testing - make sue the sound file is in the same folder as your html/js files
+    audioElem.setAttribute("src", "short-crowd-cheer.mp3");
+
+    // this adds the control dashboard to show that the audio files is working
+    audioElem.setAttribute("controls", "controls");
+
+    // add the new aduio elemtnt to the empty div in our HTML
+    document.getElementById("divAudio").appendChild(audioElem);
+
+    // hide the add audio btn
+    document.getElementById("btnAddAudio").hidden = true
+
+    document.getElementById("btnPlayAudio").hidden = false
+    document.getElementById("btnPauseAudio").hidden = false
+}
+
+function playAudio()
+{
+    let audio = document.getElementById("myAudio");
+    audio.play();
+}
+
+function pauseAudio()
+{
+    let audio = document.getElementById("myAudio");
+    audio.pause();
+}
