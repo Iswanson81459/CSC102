@@ -67,6 +67,49 @@
         {
             console.log("age not 5");
         }
+
+        // loops let us run a chunck if code over and over again
+        // nice for work with data, displaying information
+        // for loops - a loop that runs a set number of times
+        // while loops - a loop that runs an undetermain number of times
+
+
+        // for loop
+        // the first section of the for loop is for counter variable - i is most commonly used as the name of this variable
+        // the second section of the for loop is the condition that has to be true for the loop to run
+        // the third section of the for loop is where we change the value of our conter variable (i)
+        // most of the time we add 1 to the counter using counter++ which is equivalent to i = i + 1
+        for (let i = 0; i < 5; i++)
+        {
+            console.log("i = " + i);
+        }
+
+        // while loop
+        // generally speaking, it is unclear how many times the while loop will run
+        // works greate with user input
+
+        // set up the variable that we want the while loop to test
+        let exit = "no";
+
+        // test for a condition that once it is no longer true, stop running the loop
+        // while loops may run 0 times if the condition is not true
+        // while loops generally do not run the same number of times each iteratin
+        // while loops can run an infinite number of times (this is BAD)
+        while(exit != "yes")
+        {
+            console.log("Hustin we have a probelm.");
+
+            exit = "yes";
+        }
+
+        // do while loop
+        // the loop runs at least 1 time
+        do{
+            // do something here
+            console.log("run at least once");
+
+        }while(exit != "yes"); // make sure you always do a ; here
+
     </script>
 </body>
 </html>

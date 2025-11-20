@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Practice</title>
+</head>
+<body>
+    <main>
+
+    </main>
+
+    <h2>List of Plants</h2>
+    <div>
+        <ul id="ulPlants">
+
+        </ul>
+
+        <input type="text" id="txtNewPlant">
+        <button onclick="addPlant();">Add Plant</button>
+    </div>
+
+    <script>
+        // if we need to store 20 plants, we could set up 20 variables, but that leads to problems
+        let plant1 = "Rose";
+        let plant2 = "Nightshade";
+        let plant3 = "Hydranga";
+        let plant4 = "Tree";
+        let plant5 = "Flower";
+        let plant6 = "Cactus";
+
+        // a better way to store our plant list would be using a data structure - we will use an array
+        let arrPlants = ["Rose", "Nightshade", "Hydranga", "Tree", "Flower", "Cactus"];
+
+        // function to add a plant to the array
+        function addPlant()
+        {
+            // get new plant name
+            let newPlant = document.getElementById("txtNewPlant");
+
+            // add the new plant to the array
+            arrPlants.push(newPlant);
+        }
+
+        // function will loop through the array of plants and show them in the ul in the HTML ode
+        function showPlant()
+        {
+            let ulPlants = document.getElementById("ulPlants");
+
+            arrPlants.forEach(function(plant, index)
+            {
+                // create the list item - li - using javaScript and 
+                let li = document.createElement("li");
+
+                li.textContent = plant;
+
+                // this will add new listitme to th eexisting unordered list
+                ulPlants.appendChild(li);
+            });
+        }
+
+        showPlant();
+
+    </script>
+    
+</body>
+</html>
