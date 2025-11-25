@@ -14,7 +14,9 @@
     <div>
         <ul id="ulPlants">
 
-        </ul>
+        </ul> 
+
+        <h4>Click on a plant name to delete it.</h4>
 
         <input type="text" id="txtNewPlant">
         <button onclick="addPlant();">Add Plant</button>
@@ -36,16 +38,22 @@
         function addPlant()
         {
             // get new plant name
-            let newPlant = document.getElementById("txtNewPlant");
+            let newPlant = document.getElementById("txtNewPlant").value;
 
             // add the new plant to the array
             arrPlants.push(newPlant);
+
+            // call the show plant function so we can 
+            showPlant();
         }
 
         // function will loop through the array of plants and show them in the ul in the HTML ode
         function showPlant()
         {
             let ulPlants = document.getElementById("ulPlants");
+
+            // remove any plants that are already in the unordered list
+            ulPlants.innerHTML = "";
 
             arrPlants.forEach(function(plant, index)
             {
@@ -54,11 +62,21 @@
 
                 li.textContent = plant;
 
+                // add an event handler so that when the list item (plant name) is clicked, we delete the plant
+                li.onclick = function(){
+                    if(confirm('Remove ' + plant + '?'))
+                    {
+                        arrPlants.splice(index, 1);
+                        showPlant();
+                    }
+                };
+
+
                 // this will add new listitme to th eexisting unordered list
                 ulPlants.appendChild(li);
             });
         }
-
+        // this show plant is called 1 time - just when the page first loads
         showPlant();
 
     </script>

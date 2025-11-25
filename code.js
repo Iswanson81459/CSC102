@@ -165,7 +165,7 @@ function playCraps()
         }
         else
         {
-            document.GetElementById("divResult").textContent = "No, " + 
+            document.getElementById("divResult").textContent = "No, " + 
             userInput + " is not a palindrome."
         }
         
