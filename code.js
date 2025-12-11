@@ -212,10 +212,10 @@ function addAudio()
     document.getElementById("divAudio").appendChild(audioElem);
 
     // hide the add audio btn
-    document.getElementById("btnAddAudio").hidden = true
+    document.getElementById("btnAddAudio").hidden = true;
 
-    document.getElementById("btnPlayAudio").hidden = false
-    document.getElementById("btnPauseAudio").hidden = false
+    document.getElementById("btnPlayAudio").hidden = false;
+    document.getElementById("btnPauseAudio").hidden = false;
 }
 
 function playAudio()
@@ -228,4 +228,109 @@ function pauseAudio()
 {
     let audio = document.getElementById("myAudio");
     audio.pause();
+}
+
+function startAmbienceSound()
+{
+    console.log("Function Called");
+    let audioElem = document.createElement("audio");
+    
+    audioElem.setAttribute("id", "myAudio");
+    
+    // make sure you use your sound file name here so u can use the us-lab-background.mp3 for testing - make sue the sound file is in the same folder as your html/js files
+    audioElem.setAttribute("src", "scary-ambience-music-347437.mp3");
+    
+    // add the new aduio elemtnt to the empty div in our HTML
+    document.getElementById("divAudio1").appendChild(audioElem);
+    
+    let audio = document.getElementById("myAudio");
+    audio.play();
+    
+    
+    document.getElementById("question2").hidden = false;
+    document.getElementById("question2Response1").hidden = false;
+    document.getElementById("question2Response2").hidden = false;;
+    
+    document.getElementById("h2LikeScaryThings").hidden = true;
+    document.getElementById("btnLikeScaryYes").hidden = true;
+    document.getElementById("btnLikeScaryNo").hidden = true;
+}
+
+
+function playFalloutSound()
+{
+    let audioElem = document.createElement("audio");
+    
+    audioElem.setAttribute("id", "myAudio3");
+
+    // make sure you use your sound file name here so u can use the us-lab-background.mp3 for testing - make sue the sound file is in the same folder as your html/js files
+    audioElem.setAttribute("src", "falloutLevelUp.mp3");
+
+    // add the new aduio elemtnt to the empty div in our HTML
+    document.getElementById("divAudio3").appendChild(audioElem);
+
+    let audio = document.getElementById("myAudio3");
+    audio.play();
+
+    document.getElementById("body").style="background-image: url(falloutNewVegas.png); background-size: cover;";
+
+    document.getElementById("resteBtn").hidden = false;
+
+    document.getElementById("question2").hidden = true;
+    document.getElementById("question2Response1").hidden = true;
+    document.getElementById("question2Response2").hidden = true;
+
+    document.getElementById("h2LikeScaryThings").hidden = false;
+    document.getElementById("btnLikeScaryYes").hidden = false;
+    document.getElementById("btnLikeScaryNo").hidden = false;
+
+    document.getElementById("resteBtn").hidden = false;
+
+    console.log("Fallout");
+}
+
+function playFreddy()
+{
+    console.log("Freddy");
+    let audioElem = document.createElement("audio");
+    
+    audioElem.setAttribute("id", "myAudio2");
+
+    // make sure you use your sound file name here so u can use the us-lab-background.mp3 for testing - make sue the sound file is in the same folder as your html/js files
+    audioElem.setAttribute("src", "freddyFazbearJumpScare.mp3");
+
+    // add the new aduio elemtnt to the empty div in our HTML
+    document.getElementById("divAudio2").appendChild(audioElem);
+
+    let audio = document.getElementById("myAudio2");
+    audio.play();
+
+    document.getElementById("body").style="background-image: url(freddyBear.png)";
+
+    document.getElementById("question2").hidden = true;
+    document.getElementById("question2Response1").hidden = true;
+    document.getElementById("question2Response2").hidden = true;
+
+    document.getElementById("h2LikeScaryThings").hidden = false;
+    document.getElementById("btnLikeScaryYes").hidden = false;
+    document.getElementById("btnLikeScaryNo").hidden = false;
+
+    document.getElementById("resteBtn").hidden = false;
+            
+}
+
+function ResetPage()
+{
+    // stop and remove any audio elements created by the page
+    ['myAudio', 'myAudio2', 'myAudio3'].forEach(id => {
+        const a = document.getElementById(id);
+        if (a) {
+            a.pause();
+            a.currentTime = 0;
+            a.remove();
+        }
+    });
+    
+    document.getElementById("body").style.backgroundImage = "";
+    document.getElementById("body").style.backgroundSize = "";
 }
