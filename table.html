@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="code.js"></script>
+
+    <style>
+        table
+        {
+            max-width: 400px;
+            /* multiple border in same area will collapse inot a single border */
+
+            border-collapse: collapse;
+        }
+
+        tr, th, td
+        {
+            padding: 10px;
+        }
+
+        tr 
+        {
+            border: 2px solid green;
+        }
+
+        td
+        {
+            border: 2px soldi green;
+        }
+
+        th
+        {
+            background-color: rgb(138, 80, 189);
+            color: navy;
+            text-align: left;
+        }
+
+        tr:nth-child(even)
+        {
+            background-color: lightgray;
+            color: navy;
+        }
+
+        tr:hover
+        {
+            background-color: rgb(98, 34, 152);
+            color: rgb(198, 198, 202);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Programming Mistakes</h1>
+
+        <nav>
+            <a href="index.html">This Page</a> 
+            <a href="boards.html">Boards</a>
+            <a href="all_together.html">All Together</a>
+            <a href="array_practice.html">Array Practice</a>
+            <a href="class.html">Class</a>
+            <a href="table.html">This Page</a>
+            <a href="input_example.html">Input Example</a>
+            <a href="palendrome.html">Palendrome</a>
+            <a href="sound.html">Sounds</a>
+            <a href="w4game.html">W4 Game</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Programming Mistakes</h1>
+
+        <table id="tbData">
+            <caption>Programming Mistakes and the costs</caption>
+            <!-- tr is table row - each should be in a tr -->
+            <!-- <tr>
+                td - table data/cell/column - the actual date goes here
+                <td></td>
+                <td></td>
+            </tr> -->
+
+            <tr>
+                <!-- th is th etable heading -->
+                <th>Project</th>
+                <th>Year</th>
+                <th>Cost</th>
+            </tr>
+        </table>
+    </main>
+
+    <script>
+        // function to load the data into the table
+        function loadData()
+        {
+            let arrProblems = [
+                // first row of data - nested array
+                ["Crawdstrike", 2024, "$5.4B"],
+                ["Facebook", 2020, "$90M"],
+                ["Citibank", 2020, "$900M"],
+                ["Mars Climate Orbiter", 1999, "$327M"]
+            ];
+
+            for (let i=0; i<arrProblems.length; i++)
+            {
+                // create th etable row to display the data 
+                let tr = document.createElement("tr");
+
+                //loop througn each nested array
+                for (let j=0; j < arrProblems[i].length; j++)
+                {
+
+                
+                    // create the table data to display 2 piece of data
+                    let td = document.createElement("td");
+
+                    // put the data in the td
+                    td.textContent = arrProblems[i][j];
+
+                    // append th enew data to the existing row
+                    tr.appendChild(td);
+                }
+
+                // add the new row to the existing row
+                document.getElementById("tbData").appendChild(tr);
+            }
+        }
+        loadData();
+    </script>
+</body>
+</html>

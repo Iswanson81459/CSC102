@@ -147,22 +147,22 @@ function playCraps()
         return Math.floor(Math.random() * 800);
     }
 
-    function testPalin()
+function testPalin()
+{
+    // get the value that the user entered in the textbox
+    let userInput = document.getElementById("txtInput").value.trim();
+
+    // console.log("user Input: " + userInput);
+
+    isPalindrome(userInput);
+
+    // isPalindrome(userInput) == true
+    // this statement implies == true, you could write it out
+    if(isPalindrome(userInput))
     {
-        // get the value that the user entered in the textbox
-        let userInput = document.getElementById("txtInput").value.trim();
-
-        // console.log("user Input: " + userInput);
-
-        isPalindrome(userInput);
-
-        // this statement implies == true, you could write it out
-        // isPalindrome(userInput) == true
-        if(isPalindrome(userInput))
-        {
-            document.getElementById("divResult").textContent = "Yes, " + 
-            userInput + " is a palindrome."
-        }
+        document.getElementById("divResult").textContent = "Yes, " + 
+        userInput + " is a palindrome."
+    }
         else
         {
             document.getElementById("divResult").textContent = "No, " + 
